@@ -65,7 +65,7 @@ p {
 
 .btn {
     align-items: center;
-    background-color: #00F3BB;
+    background-color: #c3904de7;
     display: flex;
     font-size: 1.6rem;
     font-weight: 500;
@@ -99,8 +99,8 @@ p {
         width: 30rem;
     }
     .btn:hover {
-        background-image: linear-gradient(-90deg, #ffffff 0%, #00F0B8 100%);
-        color: #ffffff;
+        background-image: linear-gradient(-90deg, #9c6c6c 0%, #00F0B8 100%);
+        color: #28b836;
     }
 }
 
@@ -467,6 +467,34 @@ header p {
 .my-icon {
     width: 200px; /* Set width as needed */
     height: auto; /* Maintain aspect ratio */
+    margin-top: 150px; /* Example: 10px top margin */ 
+}
+
+/*Platform*/
+
+.platforms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.platform-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%; /* Each link takes up a third of the container */
+}
+
+.platform-link img {
+    max-width: 100%;
+    height: auto;
+}
+
+.platform-link label, .platform-link span {
+    margin-top: 10px; /* Spacing between logo and text */
+    text-align: center;
 }
 
 
