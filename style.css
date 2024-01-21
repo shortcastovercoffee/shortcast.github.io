@@ -137,7 +137,7 @@ nav>img {
 }
 
 .nav-mobile ul li {
-    background-color: #0000EC;
+    background-color: #ffffff;
     padding: 1.5rem;
     transition: all 0.5s ease;
 }
@@ -227,7 +227,7 @@ header p {
 /*BACKGROUND*/
 
 .background {
-    background-image: linear-gradient(225deg, #ffffff 0%, #0000A3 100%);
+    background-image: linear-gradient(225deg, #ffffff 0%, #ffffff 100%);
     clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
     height: 100%;
 }
