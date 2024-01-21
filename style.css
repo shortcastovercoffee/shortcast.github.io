@@ -467,6 +467,7 @@ header p {
 .my-icon {
     width: 500px; /* Set width as needed */
     height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Adjust top margin as needed */
 }
 
 
