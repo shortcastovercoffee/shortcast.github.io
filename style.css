@@ -99,7 +99,7 @@ p {
         width: 30rem;
     }
     .btn:hover {
-        background-image: linear-gradient(-90deg, #0000FE 0%, #00F0B8 100%);
+        background-image: linear-gradient(-90deg, #ffffff 0%, #00F0B8 100%);
         color: #ffffff;
     }
 }
@@ -198,7 +198,7 @@ h1 span:nth-child(1) {
 }
 
 h1 span:nth-child(2) {
-    color: #0000EC;
+    color: #ffffff;
 }
 
 header p {
@@ -227,7 +227,7 @@ header p {
 /*BACKGROUND*/
 
 .background {
-    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    background-image: linear-gradient(225deg, #ffffff 0%, #0000A3 100%);
     clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
     height: 100%;
 }
