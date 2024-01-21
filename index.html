@@ -7,23 +7,24 @@
     <title>Welcome to Shortcast over Coffee!!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            background-color: #f4f4f4;
-            padding: 10px;
-        }
-        .logo {
-            margin-right: 15px;
-            height: 150px; /* Adjust as needed */
-        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
             background-color: #f4f4f4;
+            color: black;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .logo {
+            margin-right: 15px;
+            height: 150px;
         }
         .episode {
             margin: 20px;
@@ -38,15 +39,18 @@
             outline: none;
             margin-top: 10px;
         }
-        audio::-webkit-media-controls-panel {
-            background-color: #fff;
-            color: black;
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        audio::-webkit-media-controls-play-button {}
-        audio::-webkit-media-controls-volume-slider {}
-        audio::-webkit-media-controls-mute-button {}
-        audio::-webkit-media-controls-timeline {}
-        audio::-webkit-media-controls-current-time-display {}
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -62,13 +66,9 @@
     <div id="podcastContainer"></div>
 
     <script>
-        // URL of the RSS feed
         const rssFeedUrl = 'https://anchor.fm/s/e690e764/podcast/rss';
-
-        // CORS Proxy to bypass Same-Origin Policy
         const proxyUrl = 'https://api.allorigins.win/raw?url=';
 
-        // Function to fetch and display the RSS feed
         async function fetchAndDisplayRss() {
             try {
                 const response = await fetch(proxyUrl + encodeURIComponent(rssFeedUrl));
@@ -80,13 +80,12 @@
             }
         }
 
-        // Function to parse the RSS feed and display episodes
         function parseRssFeed(xmlText) {
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
             const episodes = xmlDoc.getElementsByTagName('item');
             const container = document.getElementById('podcastContainer');
-            container.innerHTML = ''; // Clear existing content
+            container.innerHTML = '';
 
             for (let episode of episodes) {
                 const title = episode.getElementsByTagName('title')[0].textContent;
@@ -94,18 +93,47 @@
                 
                 const episodeDiv = document.createElement('div');
                 episodeDiv.className = 'episode';
-                episodeDiv.innerHTML = `
-                    <h2>${title}</h2>
-                    <audio controls>
-                        <source src="${audioUrl}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                `;
+
+                const audioElement = document.createElement('audio');
+                audioElement.controls = true;
+                audioElement.innerHTML = `<source src="${audioUrl}" type="audio/mpeg">Your browser does not support the audio element.`;
+
+                const shareButton = document.createElement('button');
+                shareButton.innerText = 'Share';
+                shareButton.onclick = function() {
+                    navigator.clipboard.writeText(audioUrl);
+                    alert('Link copied to clipboard!');
+                };
+
+                const backButton = document.createElement('button');
+                backButton.innerText = '<< 15s';
+                backButton.onclick = function() {
+                    if (audioElement.currentTime > 15) {
+                        audioElement.currentTime -= 15;
+                    } else {
+                        audioElement.currentTime = 0;
+                    }
+                };
+
+                const forwardButton = document.createElement('button');
+                forwardButton.innerText = '15s >>';
+                forwardButton.onclick = function() {
+                    audioElement.currentTime += 15;
+                };
+
+                episodeDiv.appendChild(backButton);
+                episodeDiv.appendChild(audioElement);
+                episodeDiv.appendChild(forwardButton);
+                episodeDiv.appendChild(shareButton);
+
+                const episodeTitle = document.createElement('h2');
+                episodeTitle.textContent = title;
+                episodeDiv.appendChild(episodeTitle);
+
                 container.appendChild(episodeDiv);
             }
         }
 
-        // Fetch and display the RSS feed on load
         fetchAndDisplayRss();
     </script>
 </body>
