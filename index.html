@@ -42,7 +42,51 @@
     <div id="podcastContainer"></div>
 
     <script>
-        // (Include the JavaScript code from the previous example here)
+        // URL of the RSS feed
+        const rssFeedUrl = 'https://anchor.fm/s/e690e764/podcast/rss';
+
+        // CORS Proxy to bypass Same-Origin Policy
+        const proxyUrl = 'https://api.allorigins.win/raw?url=';
+
+        // Function to fetch and display the RSS feed
+        async function fetchAndDisplayRss() {
+            try {
+                const response = await fetch(proxyUrl + encodeURIComponent(rssFeedUrl));
+                const data = await response.text();
+                parseRssFeed(data);
+            } catch (error) {
+                console.error('Error fetching RSS feed:', error);
+                document.getElementById('podcastContainer').innerText = 'Failed to load episodes.';
+            }
+        }
+
+        // Function to parse the RSS feed and display episodes
+        function parseRssFeed(xmlText) {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+            const episodes = xmlDoc.getElementsByTagName('item');
+            const container = document.getElementById('podcastContainer');
+            container.innerHTML = ''; // Clear existing content
+
+            for (let episode of episodes) {
+                const title = episode.getElementsByTagName('title')[0].textContent;
+                const audioUrl = episode.getElementsByTagName('enclosure')[0].getAttribute('url');
+                
+                const episodeDiv = document.createElement('div');
+                episodeDiv.className = 'episode';
+                episodeDiv.innerHTML = `
+                    <h2>${title}</h2>
+                    <audio controls>
+                        <source src="${audioUrl}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                `;
+                container.appendChild(episodeDiv);
+            }
+        }
+
+        // Fetch and display the RSS feed on load
+        fetchAndDisplayRss();
     </script>
 </body>
 </html>
