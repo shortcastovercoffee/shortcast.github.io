@@ -1,16 +1,13 @@
 @@ -0,0 +1,502 @@
 /*GLOBAL*/
-
 * {
     margin: 0;
     padding: 0;
 }
-
 html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
-
 body {
     color: #060A24;
     font-family: 'IBM Plex Mono', monospace;
@@ -190,7 +187,7 @@ nav>img {
 /*HEADER*/
 
 header {
-    padding: 2.9rem 0 2.4rem 0;
+    padding: 2rem 0 2rem 0;
 }
 
 h1 span:nth-child(1) {
@@ -207,13 +204,13 @@ header p {
 
 @media (min-width: 500px) {
     header {
-        padding: 6rem 0 2.4rem 0;
+        padding: 1rem 0 1rem 0;
     }
 }
 
 @media (min-width: 900px) {
     header {
-        padding: 10rem 0 2.4rem 0;
+        padding: 10rem 0 4rem 0;
     }
 }
 
@@ -248,7 +245,7 @@ header p {
 /*EPISODES*/
 
 .episodes {
-    padding: 8rem 0 16rem 0;
+    padding: 1rem 0 1rem 0;
 }
 
 .episodes__podcasts {
@@ -265,7 +262,7 @@ header p {
 
 @media (min-width: 900px) {
     .episodes {
-        padding: 15rem 0 16rem 0;
+        padding: 4rem 0 4rem 0;
     }
     .episodes__podcasts {
         flex-flow: row wrap;
@@ -346,7 +343,7 @@ header p {
 /*STELLAR GUEST*/
 
 .guests {
-    padding: 6rem 0;
+    padding: 1rem 0;
 }
 
 .guests ul li {
