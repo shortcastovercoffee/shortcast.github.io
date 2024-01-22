@@ -104,6 +104,8 @@ p {
 
 /*NAVIGATION BAR*/
 
+/*NAVIGATION BAR*/
+
 nav {
     align-items: center;
     display: flex;
@@ -112,7 +114,7 @@ nav {
     text-transform: uppercase;
 }
 
-nav>img {
+nav > img {
     height: 2.4rem;
 }
 
@@ -131,27 +133,30 @@ nav>img {
     position: absolute;
     right: 0;
     top: 4rem;
+    display: flex; /* Align menu items vertically */
+    flex-direction: column; /* Stack items vertically */
 }
 
 .nav-mobile ul li {
     background-color: #ffffff;
     padding: 1.5rem;
     transition: all 0.5s ease;
+    width: 100%; /* Full width for each menu item */
 }
 
-.nav-mobile input:checked~ul li {
-    transform: translateX(100%);
+.nav-mobile input:checked ~ ul li {
+    transform: translateX(0%); /* Adjust to show the menu */
 }
 
 .nav-mobile ul li a {
-    color: #ffffff;
+    color: #060A24; /* Adjusted for visibility against white background */
 }
 
 @media (min-width: 500px) {
     nav {
         height: 6rem;
     }
-    nav>img {
+    nav > img {
         height: 3rem;
     }
     .nav-mobile ul {
@@ -163,7 +168,7 @@ nav>img {
     nav {
         height: 8rem;
     }
-    nav>img {
+    nav > img {
         height: 3.6rem;
     }
     .nav-mobile {
