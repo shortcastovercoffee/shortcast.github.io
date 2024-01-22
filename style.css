@@ -503,9 +503,9 @@ header p {
 
 
 .title {
-    margin: 1rem; /* Centers the container */
+    margin: 15rem; /* Centers the container */
     max-width: 75%; /* Maximum width for larger screens */
-    padding: 20px; /* Adds some space inside the container */
+    padding: 0.05px; /* Adds some space inside the container */
 }
 
 /* Responsive adjustments for smaller screens */
