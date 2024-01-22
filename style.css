@@ -27,7 +27,6 @@ h3 {
 
 h1,
 h2 {
-    font-size: 3.6rem;
     font-weight: 400;
 }
 
@@ -101,7 +100,6 @@ p {
     }
 }
 
-
 /*NAVIGATION BAR*/
 
 /*NAVIGATION BAR*/
@@ -169,7 +167,7 @@ nav > img {
         height: 8rem;
     }
     nav > img {
-        height: 3.6rem;
+        height: 0.05rem;
     }
     .nav-mobile {
         display: none;
@@ -187,7 +185,6 @@ nav > img {
         text-decoration: line-through;
     }
 }
-
 
 /*HEADER*/
 
@@ -225,9 +222,7 @@ header p {
     }
 }
 
-
 /*BACKGROUND*/
-
 
 
 @media (min-width: 500px) {
@@ -237,7 +232,6 @@ header p {
 @media (min-width: 900px) {
 
 }
-
 
 /*EPISODES*/
 
@@ -270,7 +264,6 @@ header p {
         margin-bottom: 2rem;
     }
 }
-
 
 /*ABOUT US*/
 
@@ -336,7 +329,6 @@ header p {
     }
 }
 
-
 /*STELLAR GUEST*/
 
 .guests {
@@ -389,7 +381,6 @@ header p {
     }
 }
 
-
 /*THEMES*/
 
 .themes {
@@ -421,9 +412,7 @@ header p {
     }
 }
 
-
 /*NEWS*/
-
 
 
 .news {
@@ -496,14 +485,12 @@ header p {
     text-align: center;
 }
 
-
 /*title*/
 
 /* Default styles for desktop */
 
-
 .title {
-    margin: 15rem; /* Centers the container */
+    margin: 12%; /* Centers the container */
     max-width: 75%; /* Maximum width for larger screens */
     padding: 0.05px; /* Adds some space inside the container */
 }
@@ -523,7 +510,6 @@ header p {
         max-width: 100%; /* Container takes full width on very small screens */
     }
 }
-
 
 
 /*FOOTER*/
