@@ -199,7 +199,7 @@ h1 span:nth-child(2) {
 }
 
 header p {
-    margin: 1.6rem 0 3.6rem 0;
+    margin: 1.6rem 0 1rem 0;
 }
 
 @media (min-width: 500px) {
@@ -210,7 +210,7 @@ header p {
 
 @media (min-width: 900px) {
     header {
-        padding: 10rem 0 4rem 0;
+        padding: 10rem 0 2rem 0;
     }
 }
 
@@ -270,7 +270,7 @@ header p {
     }
     .episodes__podcasts iframe {
         flex-basis: calc(50% - 3rem);
-        margin-bottom: 6rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -400,7 +400,7 @@ header p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 6rem;
+    padding-bottom: 2rem;
 }
 
 .themes li {
