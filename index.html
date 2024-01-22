@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to your style.css -->
     <title>Shortcast over Coffee</title>
 </head>
+<script>
+    document.getElementById('burger').addEventListener('change', function() {
+        document.querySelector('.nav-mobile ul').classList.toggle('active');
+    });
+</script>
 <body>
     <nav class="container">
         <img src="Shortcast.png" alt="image unavailable" class="my-icon">
@@ -19,7 +24,6 @@
             <ul>
                 <li><a href="https://podcasts.apple.com/us/podcast/shortcast-over-coffee/id1701292931">Episodes</a></li>
                 <li><a href="#about-us">About</a></li>
-                <li><a href="#guests">Interviews</a></li>
                 <li><a href="https://www.buymeacoffee.com/shortcastovercoffee">Support the show</a></li>
             </ul>
         </div>
@@ -30,10 +34,9 @@
                 <img height="20px" src="https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil.png" alt=""> 
             </label>
             <ul>
-                <li><a href="#episodes">Episodes</a></li>
+                <li><a href="https://podcasts.apple.com/us/podcast/shortcast-over-coffee/id1701292931">Episodes</a></li>
                 <li><a href="#about-us">About</a></li>
-                <li><a href="#guests">Interviews</a></li>
-                <li><a href="#themes">Topics</a></li>
+                <li><a href="https://www.buymeacoffee.com/shortcastovercoffee">Support the show</a></li>
             </ul>
         </div>
         <!--nav-bar__mobile-->
@@ -42,7 +45,7 @@
     <!--nav-bar-->
 
 
-    <header class="container">
+    <header class="title">
 
         <h1>Welcome to Shortcast over Coffee!</h1>
 

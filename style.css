@@ -128,11 +128,11 @@ nav > img {
 }
 
 .nav-mobile ul {
-    left: 0;
+    left: 40rem;
     overflow: hidden;
     position: absolute;
-    right: 0;
-    top: 4rem;
+    right: 2rem;
+    top: 0.05rem;
     display: flex; /* Align menu items vertically */
     flex-direction: column; /* Stack items vertically */
 }
@@ -160,7 +160,7 @@ nav > img {
         height: 3rem;
     }
     .nav-mobile ul {
-        top: 6rem;
+        top: 1rem;
     }
 }
 
@@ -460,6 +460,15 @@ header p {
     margin-top: 150px; /* Example: 10px top margin */ 
 }
 
+/* Mobile version */
+@media (max-width: 500px) {
+    .my-icon {
+        width: 100px; /* Smaller width for mobile */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 50px; /* Reduced top margin for mobile */
+    }
+}
+
 /*Platform*/
 
 .platforms {
@@ -486,6 +495,35 @@ header p {
     margin-top: 10px; /* Spacing between logo and text */
     text-align: center;
 }
+
+
+/*title*/
+
+/* Default styles for desktop */
+
+
+.title {
+    margin: 1rem; /* Centers the container */
+    max-width: 75%; /* Maximum width for larger screens */
+    padding: 20px; /* Adds some space inside the container */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .title {
+        margin-top: 125px;
+        max-width: 95%; /* Allows the container to take up more screen width on small devices */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .title {
+        margin-top: 100px;
+        max-width: 100%; /* Container takes full width on very small screens */
+    }
+}
+
 
 
 /*FOOTER*/
