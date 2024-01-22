@@ -1,4 +1,3 @@
-@@ -0,0 +1,502 @@
 /*GLOBAL*/
 * {
     margin: 0;
@@ -11,27 +10,26 @@ html {
 body {
     color: #060A24;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.4rem;
+    font-size: calc(1rem + 0.5vw); /* Responsive font size */
 }
 
 .container {
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 90vw;
+    width: 100%;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
-h1,
-h2 {
+h1, h2 {
+    font-size: 3.6rem;
     font-weight: 400;
 }
 
 h1 {
-    width: 90%;
+    width: 100%;
 }
 
 h2 {
@@ -101,9 +99,6 @@ p {
 }
 
 /*NAVIGATION BAR*/
-
-/*NAVIGATION BAR*/
-
 nav {
     align-items: center;
     display: flex;
@@ -113,7 +108,8 @@ nav {
 }
 
 nav > img {
-    height: 2.4rem;
+    height: auto;
+    max-width: 100%;
 }
 
 .nav-desktop {
@@ -131,23 +127,23 @@ nav > img {
     position: absolute;
     right: 2rem;
     top: 0.05rem;
-    display: flex; /* Align menu items vertically */
-    flex-direction: column; /* Stack items vertically */
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-mobile ul li {
     background-color: #ffffff;
     padding: 1.5rem;
     transition: all 0.5s ease;
-    width: 100%; /* Full width for each menu item */
+    width: 100%;
 }
 
 .nav-mobile input:checked ~ ul li {
-    transform: translateX(0%); /* Adjust to show the menu */
+    transform: translateX(0%);
 }
 
 .nav-mobile ul li a {
-    color: #060A24; /* Adjusted for visibility against white background */
+    color: #060A24;
 }
 
 @media (min-width: 500px) {
@@ -167,7 +163,7 @@ nav > img {
         height: 8rem;
     }
     nav > img {
-        height: 0.05rem;
+        height: 3.6rem;
     }
     .nav-mobile {
         display: none;
@@ -187,7 +183,6 @@ nav > img {
 }
 
 /*HEADER*/
-
 header {
     padding: 2rem 0 2rem 0;
 }
@@ -222,57 +217,42 @@ header p {
     }
 }
 
-/*BACKGROUND*/
-
-
-@media (min-width: 500px) {
-
-}
-
-@media (min-width: 900px) {
-
-}
-
 /*EPISODES*/
-
 .episodes {
     padding: 1rem 0 1rem 0;
 }
 
 .episodes__podcasts {
     align-items: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid layout for episodes */
+    gap: 1rem; /* Gap between episodes */
     margin: 0 auto;
     width: 90%;
 }
 
 .episodes__podcasts iframe {
     margin-bottom: 1rem;
+    border-radius: 12px; /* Rounded corners */
 }
 
 @media (min-width: 900px) {
     .episodes {
         padding: 4rem 0 4rem 0;
     }
-    .episodes__podcasts {
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
     .episodes__podcasts iframe {
-        flex-basis: calc(50% - 3rem);
         margin-bottom: 2rem;
     }
 }
 
 /*ABOUT US*/
-
 .about-us {
     width: 100%;
 }
 
 .about-us__iphone {
-    height: 48rem;
+    height: auto; /* Responsive height */
+    max-width: 100%; /* Responsive width */
 }
 
 .about-us__iphone div {
@@ -330,7 +310,6 @@ header p {
 }
 
 /*STELLAR GUEST*/
-
 .guests {
     padding: 1rem 0;
 }
@@ -364,7 +343,7 @@ header p {
         flex-wrap: wrap;
     }
     .guests ul li {
-        flex-basis: 50%
+        flex-basis: 50%;
     }
 }
 
@@ -382,7 +361,6 @@ header p {
 }
 
 /*THEMES*/
-
 .themes {
     align-items: center;
     display: flex;
@@ -413,8 +391,6 @@ header p {
 }
 
 /*NEWS*/
-
-
 .news {
     padding: 6.4rem 0;
 }
@@ -435,18 +411,16 @@ header p {
 }
 
 @media (min-width: 900px) {
-
     .news {
         padding: 14rem 0;
     }
 }
 
 /*logo*/
-
 .my-icon {
     width: 200px; /* Set width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin-top: 150px; /* Example: 10px top margin */ 
+    margin-top: 150px; /* Example: 10px top margin */
 }
 
 /* Mobile version */
@@ -459,7 +433,6 @@ header p {
 }
 
 /*Platform*/
-
 .platforms {
     display: flex;
     justify-content: space-between;
@@ -486,11 +459,9 @@ header p {
 }
 
 /*title*/
-
 /* Default styles for desktop */
-
 .title {
-    margin: 12%; /* Centers the container */
+    margin: 15rem; /* Centers the container */
     max-width: 75%; /* Maximum width for larger screens */
     padding: 0.05px; /* Adds some space inside the container */
 }
@@ -511,9 +482,7 @@ header p {
     }
 }
 
-
 /*FOOTER*/
-
 footer {
     padding: 2rem 0;
 }
@@ -537,6 +506,7 @@ footer div a i {
     footer {
         align-items: center;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
     }
     footer p {
@@ -550,4 +520,3 @@ footer div a i {
         color: #00F3BB;
     }
 }
-Footer
