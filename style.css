@@ -223,22 +223,14 @@ header p {
 
 /*BACKGROUND*/
 
-.background {
-    background-image: linear-gradient(225deg, #ffffff 0%, #ffffff 100%);
-    clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
-    height: 100%;
-}
+
 
 @media (min-width: 500px) {
-    .background {
-        clip-path: polygon(100% 0, 100% 95%, 0 100%, 0 5%);
-    }
+
 }
 
 @media (min-width: 900px) {
-    .background {
-        clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 10%);
-    }
+
 }
 
 
@@ -427,9 +419,7 @@ header p {
 
 /*NEWS*/
 
-.background-news {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%);
-}
+
 
 .news {
     padding: 6.4rem 0;
@@ -451,9 +441,7 @@ header p {
 }
 
 @media (min-width: 900px) {
-    .background-news {
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 20%);
-    }
+
     .news {
         padding: 14rem 0;
     }
