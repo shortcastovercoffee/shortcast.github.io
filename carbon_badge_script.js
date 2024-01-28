@@ -1,3 +1,4 @@
+
 import { WebsiteCarbonCalculator, WebsiteCarbonCalculatorError } from 'website-carbon-calculator';
 
 async function calculateCarbonEmission() {
@@ -6,17 +7,18 @@ async function calculateCarbonEmission() {
         const result = await websiteCarbonCalculator.calculateByURL('https://shortcastovercoffee.com');
 
         if (result && result.co2PerPageview !== undefined) {
-            document.getElementById('co2-emission-data').textContent = `CO2 Emission per Pageview: ${result.co2PerPageview.toFixed(4)}g CO2`;
+            document.getElementById('data-container').textContent = `CO2 Emission per Pageview: ${result.co2PerPageview.toFixed(4)}g CO2`;
         } else {
-            document.getElementById('co2-emission-data').textContent = "Data not available.";
+            document.getElementById('data-container').textContent = "Result object is missing or doesn't have the co2PerPageview property.";
         }
     } catch (error) {
         if (error instanceof WebsiteCarbonCalculatorError) {
             console.warn('WebsiteCarbonCalculatorError:', error.message);
+            document.getElementById('data-container').textContent = 'WebsiteCarbonCalculatorError: ' + error.message;
         } else {
             console.error("An unexpected error occurred:", error);
+            document.getElementById('data-container').textContent = "An unexpected error occurred.";
         }
-        document.getElementById('co2-emission-data').textContent = "Error loading data.";
     }
 }
 
