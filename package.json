@@ -1,6 +1,7 @@
 {
   "name": "tailwind-css-website",
   "version": "1.0.0",
+  "type": "module",
   "description": "A responsive website built using the Tailwind CSS Framework and HTML5 for a fictional company as part of a challenge by Frontend Mentor and demonstrated by Traversy Media.",
   "homepage": "https://github.com/asbhogal/Tailwind-CSS-Website",
   "scripts": {
@@ -15,6 +16,7 @@
     "tailwindcss": "^3.2.1"
   },
   "dependencies": {
+    "@tgwf/co2": "^0.14.1",
     "ecowebmetrics": "^1.2.2",
     "website-carbon-badges": "^1.1.3",
     "website-carbon-calculator": "^1.2.7"
