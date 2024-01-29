@@ -197,6 +197,7 @@ body {
         background-image: url('../src/img/bg-simplify-section-desktop.svg');
         background-position: 5.125rem -4.5rem;
         background-size: 24.375rem;
+        overflow: hidden;
     }
 
     #cta-section {
