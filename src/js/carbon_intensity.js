@@ -56,15 +56,15 @@ fetch('https://api.ipify.org?format=json')
             if (result && result.co2PerPageview !== undefined) {
                 document.getElementById('wcb').textContent = `CO2 Emission per Pageview: ${result.co2PerPageview.toFixed(4)}g CO2`;
             } else {
-                document.getElementById('wcb').textContent = "Result object is missing or doesn't have the co2PerPageview property.";
+                document.getElementById('data-container').textContent = "Result object is missing or doesn't have the co2PerPageview property.";
             }
         } catch (error) {
             if (error instanceof WebsiteCarbonCalculatorError) {
                 console.warn('WebsiteCarbonCalculatorError:', error.message);
-                document.getElementById('wcb').textContent = 'WebsiteCarbonCalculatorError: ' + error.message;
+                document.getElementById('data-container').textContent = 'WebsiteCarbonCalculatorError: ' + error.message;
             } else {
                 console.error("An unexpected error occurred:", error);
-                document.getElementById('wcb').textContent = "An unexpected error occurred.";
+                document.getElementById('data-container').textContent = "An unexpected error occurred.";
             }
         }
     }
