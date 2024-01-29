@@ -34,7 +34,7 @@ fetch('https://api.ipify.org?format=json')
 
         // Assuming the response has a 'carbon_intensity' field
         const carbonIntensity = datalog.carbon_intensity;
-        if (value > datalog.carbon_intensity) {
+        if (value < datalog.carbon_intensity) {
             document.getElementById('carbonIntensity').textContent = `The current grid intensity of electricity in your country is ${value} metric tons of CO2 per gigawatthour. This is lower than the annual average grid intensity, which is ${datalog.carbon_intensity} metric tons of CO2 per gigawatthour. Spotify links are hence shown.`;
         } else {
             document.getElementById('carbonIntensity').textContent = `The current grid intensity of electricity in your country is ${value} metric tons of CO2 per gigawatthour. This is higher than the annual average grid intensity, which is ${datalog.carbon_intensity} metric tons of CO2 per gigawatthour. Spotify links are hence not shown.`;
