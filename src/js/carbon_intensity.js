@@ -33,10 +33,10 @@ fetch('https://api.ipify.org?format=json')
         
         if (value < datalog.carbon_intensity) {
             document.getElementById('carbonIntensity').textContent = `The current grid intensity of electricity in your country is ${value} metric tons of CO2 per gigawatthour. This is lower than the annual average grid intensity, which is ${datalog.carbon_intensity} metric tons of CO2 per gigawatthour. You are viewing the full website.`;
-            spotifyFlag = true;
+            spotifyFlag = false;
         } else {
             document.getElementById('carbonIntensity').textContent = `The current grid intensity of electricity in your country is ${value} metric tons of CO2 per gigawatthour. This is higher than the annual average grid intensity, which is ${datalog.carbon_intensity} metric tons of CO2 per gigawatthour. Spotify links, About me are hence not shown as they are carbon intensive.`;
-            spotifyFlag = false;
+            spotifyFlag = true;
         }
         
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var toggleSection = document.getElementById('hero');
 
     if (flag) {
-        toggleSection.style.display = 'none'; // Or 'flex', 'grid', etc., as per your layout needs
+        toggleSection.style.display = 'block'; // Or 'flex', 'grid', etc., as per your layout needs
     } else {
         toggleSection.style.display = 'block';
     }
@@ -71,10 +71,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } catch (error) {
             if (error instanceof WebsiteCarbonCalculatorError) {
-                console.warn('WebsiteCarbonCalculatorError:', error.message);
+                //console.warn('WebsiteCarbonCalculatorError:', error.message);
                 document.getElementById('data-container').textContent = 'WebsiteCarbonCalculatorError: ' + error.message;
             } else {
-                console.error("An unexpected error occurred:", error);
+                //console.error("An unexpected error occurred:", error);
                 document.getElementById('data-container').textContent = "An unexpected error occurred.";
             }
         }
