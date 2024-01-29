@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var toggleSection = document.getElementById('hero');
 
     if (flag) {
-        toggleSection.style.display = 'block'; // Or 'flex', 'grid', etc., as per your layout needs
+        toggleSection.style.display = 'none'; // Or 'flex', 'grid', etc., as per your layout needs
     } else {
         toggleSection.style.display = 'block';
     }
